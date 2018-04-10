@@ -1,0 +1,29 @@
+apply from: "versions.gradle"
+
+buildscript {
+    apply from: "versions.gradle"
+
+    repositories {
+        // ekito hotspot
+        // maven { url "http://192.168.0.42:10080/repository/maven-public/" }
+
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:$androidGradlePlugin"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+allprojects {
+    repositories {
+        // ekito hotspot
+        // maven { url "http://192.168.0.42:10080/repository/maven-public/" }
+
+        mavenLocal()
+        jcenter()
+        google()
+    }
+}
+
