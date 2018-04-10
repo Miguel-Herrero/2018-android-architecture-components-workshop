@@ -1,5 +1,7 @@
 package fr.ekito.myweatherapp.di
 
+import android.arch.persistence.room.Room
+import fr.ekito.myweatherapp.data.datasource.room.WeatherDatabase
 import fr.ekito.myweatherapp.data.repository.WeatherRepository
 import fr.ekito.myweatherapp.data.repository.WeatherRepositoryImpl
 import fr.ekito.myweatherapp.util.rx.ApplicationSchedulerProvider
@@ -7,6 +9,7 @@ import fr.ekito.myweatherapp.util.rx.SchedulerProvider
 import fr.ekito.myweatherapp.view.splash.SplashViewModel
 import fr.ekito.myweatherapp.view.weather.WeatherViewModel
 import org.koin.android.architecture.ext.viewModel
+import org.koin.android.ext.koin.androidApplication
 import org.koin.dsl.module.applicationContext
 
 /**
@@ -25,6 +28,15 @@ val weatherAppModule = applicationContext {
 
     // Rx Schedulers
     bean { ApplicationSchedulerProvider() as SchedulerProvider }
+
+    // Room Database
+    bean {
+        Room.databaseBuilder(androidApplication(), WeatherDatabase::class.java, "weather-db")
+            .build()
+    }
+
+    // Expose WeatherDAO directly
+    bean { get<WeatherDatabase>().weatherDAO() }
 }
 
 // Gather all app modules
