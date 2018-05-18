@@ -24,7 +24,7 @@ val weatherAppModule = applicationContext {
     viewModel { WeatherViewModel(get(), get()) }
 
     // Weather Data Repository
-    bean { WeatherRepositoryImpl(get()) as WeatherRepository }
+    bean { WeatherRepositoryImpl(get(), get()) as WeatherRepository }
 
     // Rx Schedulers
     bean { ApplicationSchedulerProvider() as SchedulerProvider }
