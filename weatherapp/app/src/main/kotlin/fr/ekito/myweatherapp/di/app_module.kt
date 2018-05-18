@@ -4,8 +4,7 @@ import fr.ekito.myweatherapp.data.repository.WeatherRepository
 import fr.ekito.myweatherapp.data.repository.WeatherRepositoryImpl
 import fr.ekito.myweatherapp.util.rx.ApplicationSchedulerProvider
 import fr.ekito.myweatherapp.util.rx.SchedulerProvider
-import fr.ekito.myweatherapp.view.detail.DetailContract
-import fr.ekito.myweatherapp.view.detail.DetailPresenter
+import fr.ekito.myweatherapp.view.detail.DetailViewModel
 import fr.ekito.myweatherapp.view.splash.SplashContract
 import fr.ekito.myweatherapp.view.splash.SplashPresenter
 import fr.ekito.myweatherapp.view.weather.WeatherHeaderContract
@@ -30,11 +29,6 @@ val weatherAppModule = applicationContext {
     // Presenter for ResultList View
     factory {
         WeatherListPresenter(get(), get()) as WeatherListContract.Presenter
-    }
-
-    // Presenter for Detail View
-    factory {
-        DetailPresenter(get(), get()) as DetailContract.Presenter
     }
 
     // Weather Data Repository
