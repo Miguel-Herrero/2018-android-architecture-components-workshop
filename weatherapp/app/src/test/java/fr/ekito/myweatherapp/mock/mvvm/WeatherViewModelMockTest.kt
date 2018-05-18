@@ -11,7 +11,7 @@
 //import fr.ekito.myweatherapp.view.ErrorState
 //import fr.ekito.myweatherapp.view.Event
 //import fr.ekito.myweatherapp.view.LoadingState
-//import fr.ekito.myweatherapp.view.State
+//import fr.ekito.myweatherapp.view.ViewModelState
 //import fr.ekito.myweatherapp.view.weather.WeatherViewModel
 //import io.reactivex.Single
 //import org.junit.Assert
@@ -28,7 +28,7 @@
 //
 //    lateinit var viewModel: WeatherViewModel
 //    @Mock
-//    lateinit var statesView: Observer<State>
+//    lateinit var statesView: Observer<ViewModelState>
 //    @Mock
 //    lateinit var eventsView: Observer<Event>
 //    @Mock
@@ -55,7 +55,7 @@
 //        viewModel.getWeather()
 //
 //        // setup ArgumentCaptor
-//        val arg = argumentCaptor<State>()
+//        val arg = argumentCaptor<ViewModelState>()
 //        // Here we expect 2 calls on statesView.onChanged
 //        verify(statesView, Mockito.times(2)).onChanged(arg.capture())
 //
@@ -80,7 +80,7 @@
 //        viewModel.getWeather()
 //
 //        // setup ArgumentCaptor
-//        val arg = argumentCaptor<State>()
+//        val arg = argumentCaptor<ViewModelState>()
 //        // Here we expect 2 calls on statesView.onChanged
 //        verify(statesView, Mockito.times(2)).onChanged(arg.capture())
 //
@@ -99,7 +99,7 @@
 //        viewModel.loadNewLocation(location)
 //
 //        // setup ArgumentCaptor
-//        val statesArg = argumentCaptor<State>()
+//        val statesArg = argumentCaptor<ViewModelState>()
 //        // Here we expect 2 calls on statesView.onChanged
 //        verify(statesView, Mockito.times(1)).onChanged(statesArg.capture())
 //
@@ -133,7 +133,7 @@
 //        viewModel.loadNewLocation(location)
 //
 //        // setup ArgumentCaptor
-//        val statesArg = argumentCaptor<State>()
+//        val statesArg = argumentCaptor<ViewModelState>()
 //        // Here we expect 2 calls on statesView.onChanged
 //        verify(statesView, Mockito.times(0)).onChanged(statesArg.capture())
 //

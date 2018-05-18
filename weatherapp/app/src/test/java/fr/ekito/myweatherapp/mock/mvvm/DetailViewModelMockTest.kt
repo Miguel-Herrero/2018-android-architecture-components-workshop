@@ -8,7 +8,7 @@
 //import fr.ekito.myweatherapp.util.TestSchedulerProvider
 //import fr.ekito.myweatherapp.view.ErrorState
 //import fr.ekito.myweatherapp.view.LoadingState
-//import fr.ekito.myweatherapp.view.State
+//import fr.ekito.myweatherapp.view.ViewModelState
 //import fr.ekito.myweatherapp.view.detail.DetailViewModel
 //import io.reactivex.Single
 //import org.junit.Assert
@@ -24,7 +24,7 @@
 //
 //    lateinit var viewModel: DetailViewModel
 //    @Mock
-//    lateinit var view: Observer<State>
+//    lateinit var view: Observer<ViewModelState>
 //    @Mock
 //    lateinit var repository: WeatherRepository
 //
@@ -50,7 +50,7 @@
 //
 //        viewModel.getDetail(id)
 //
-//        val arg = argumentCaptor<State>()
+//        val arg = argumentCaptor<ViewModelState>()
 //        // Here we expect 2 calls on view.onChanged
 //        verify(view, times(2)).onChanged(arg.capture())
 //
@@ -70,7 +70,7 @@
 //
 //        viewModel.getDetail(id)
 //
-//        val arg = argumentCaptor<State>()
+//        val arg = argumentCaptor<ViewModelState>()
 //        // Here we expect 2 calls on view.onChanged
 //        verify(view, times(2)).onChanged(arg.capture())
 //
